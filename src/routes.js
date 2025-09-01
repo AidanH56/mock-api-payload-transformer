@@ -8,7 +8,7 @@ const converter = require('./converter')
 router.post('/convert', (req, res) => {
     try {
         const jsonInputData = req.body;
-        const convertedData = converter.convert(jsonInputData);
+        const convertedData = converter.transformPayload(jsonInputData);
         res.json({ message: 'Conversion successful', data: convertedData });
     } catch (error) {
         console.error('Error during conversion:', error);
