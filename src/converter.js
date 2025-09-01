@@ -3,27 +3,27 @@
 // Transform the payload obtained
 function transformPayload(inputData) {
     return {
-        from: {
-            bank: inputData.debtorBank.debtorBankName,
-            account: inputData.debtorBank.debtorBankAccount,
-            routing: inputData.debtorBank.debtorRoutingNumber,
-            name: inputData.debtorBank.debtorName,
+        sender: {
+            bankName: inputData.debtorBank.debtorBankName,
+            accountNumber: inputData.debtorBank.debtorBankAccount,
+            routingNumber: inputData.debtorBank.debtorRoutingNumber,
+            accountHolderName: inputData.debtorBank.debtorName,
             address: inputData.debtorBank.debtorAddress,
             country: inputData.debtorBank.debtorCountry,
         },
-        to: {
-            bank: inputData.beneficiary.beneficiaryBank,
-            account: inputData.beneficiary.beneficiaryBankAccount,
-            routing: inputData.beneficiary.beneficiaryRoutingNumber,
-            name: inputData.beneficiary.beneficiaryName,
+        recipient: {
+            bankName: inputData.beneficiary.beneficiaryBank,
+            accountNumber: inputData.beneficiary.beneficiaryBankAccount,
+            routingNumber: inputData.beneficiary.beneficiaryRoutingNumber,
+            accountHolderName: inputData.beneficiary.beneficiaryName,
             address: inputData.beneficiary.beneficiaryAddress,
             country: inputData.beneficiary.beneficiaryCountry,
         },
-        transaction: {
-            type: inputData.wireType,
-            amount: inputData.amount,
+        wireTransfer: {
+            transferType: inputData.wireType,
+            transferAmount: inputData.amount,
             currency: inputData.currency,
-            dueDate: inputData.paymentDueDate,
+            scheduledDate: inputData.paymentDueDate,
         },
     };
 }
